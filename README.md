@@ -33,5 +33,12 @@ This starts the service
 Params | Type | Default | Description
 ------ | ---- | ------- | -----------
 `interval` | int | 0 | Turning on will be faded over the time (in milliseconds).
-`callback` | function | null | `function(color)` An RGB value is generated as [x, x, x], and mus tbe handled in the callback function 
+`callback` | function | null | `function(color)` An RGB value is generated as [x, x, x], and mus tbe handled in this function (see example)
 
+#### `ambilight.stop()`
+
+Stops the service, if it is running.
+
+#### `ambilight.isRunning()`
+
+Returns true if service is running.
