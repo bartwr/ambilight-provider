@@ -1,5 +1,6 @@
 var screenshot = require('desktop-screenshot');
 var color = require('dominant-color')
+var fs = require('fs');
 
 var timer
 var isRunning = false
@@ -23,6 +24,7 @@ exports.stop = () => {
     if (timer != null && isRunning) {
         clearInterval(timer)
         isRunning = false
+        fs.unlinkSync("screenshot.png")
     }     
 }
 
