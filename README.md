@@ -2,7 +2,11 @@
 
 ## Description
 
-Description
+Ambilight-provider is a module, which when running, is generating a RGB integer array, representing the dominant color of the screen.
+The color is calculated every given Millisecond, based on the value given in the 'interval' parameter, in the start function.
+
+Initial purpose of the module, was to sync wifi bulbs, with the movie running on a media server.
+Best tested interval without failure is currently 150ms, but surely depends on processor speed, etc.
 
 ## Installation
 
