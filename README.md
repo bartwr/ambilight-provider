@@ -11,7 +11,7 @@ Best tested interval without failure is currently 150ms, but surely depends on p
 ## Installation
 
 ```sh
-$ npm -i ambilight-provider --save
+$ npm install ambilight-provider --save
 ```
 
 ## Usage
@@ -21,6 +21,7 @@ var ambilight = require("ambilight-provider")
 
 ambilight.start(150, (color) => {
     console.log(color)
+    // Ex -> [183, 67, 102, 1] <-> [Red, Green, Blue, Hue]
 })
 
 setTimeout(() => {
@@ -32,11 +33,11 @@ setTimeout(() => {
 ### Functions
 
 #### `ambilight.on(interval, callback)`
-This starts the service.
+This starts the module.
 
 Params | Type | Default | Description
 ------ | ---- | ------- | -----------
-`interval` | int | null | The desired time between each calculation of ambilight color.
+`interval` | int | null | The desired time(Milliseconds) between each calculation of ambilight color.
 `callback` | function | null | `function(color)` An RGB value is generated as [x, x, x], and must be handled in this function (see example)
 
 #### `ambilight.stop()`
