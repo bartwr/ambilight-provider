@@ -24,7 +24,12 @@ exports.stop = () => {
     if (timer != null && isRunning) {
         clearInterval(timer)
         isRunning = false
-        fs.unlinkSync("screenshot.png")
+        try {
+            fs.unlinkSync("screenshot.png")
+        } catch (err) {
+            console.log("Couldn't delete screenshot\n" + err)
+        }
+        
     }     
 }
 
