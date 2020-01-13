@@ -1,4 +1,4 @@
-var screenshot = require('desktop-screenshot');
+var screenshot = require('screenshot-node');
 var color = require('dominant-color')
 var fs = require('fs');
 
@@ -8,8 +8,10 @@ var isRunning = false
 exports.start = (interval, callback) => {
     isRunning = true
     timer = setInterval(() => {
-        screenshot("screenshot.png", function (error, complete) {
-          color("screenshot.png", { format: 'rgb' }, (err, color) => {
+
+        screenshot.saveScreenshot(0, 0, 1920, 1080, "screenshot.png", (screenshotErr) => {
+          if(screenshotErr) console.log(screenshotErr);
+          color("screenshot.png", { format: 'hex' }, (err, color) => {
             if (err) {
                 console.log("Computer cant keep up with interval. Try increasing by 25ms")
                 return

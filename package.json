@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node test.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -19,6 +20,7 @@
   "dependencies": {
     "desktop-screenshot": "^0.1.1",
     "dominant-color": "0.0.1",
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "screenshot-node": "^1.2.1"
   }
 }
